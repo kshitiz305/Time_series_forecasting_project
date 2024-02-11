@@ -51,18 +51,18 @@ class Chrono_projector_deployment:
 
             core_1 = multiprocessing.Process(target=temperature_core,args = (temperature_relation[0], temperature_relation[1], temperature_relation[2],temperature_relation[3], self.forecast_horizon,
                                                                      self.tsf_dev_override, self.enhanced_diagnostics_mode, self.stat_analysis_mode, self.delay ,self.developer_mode,
-                                                                     self.data_view_mode,self.column_name,self.ghost_mode,self.confirmation_activation))
+                                                                     self.data_view_mode,self.column_name[0],self.ghost_mode,self.confirmation_activation))
             core_2 = multiprocessing.Process(target=humidity_core,args = (rainfall_relation[0], rainfall_relation[1], rainfall_relation[2],rainfall_relation[3], self.forecast_horizon,
                                                                   self.tsf_dev_override, self.enhanced_diagnostics_mode,
                                                                   self.stat_analysis_mode, self.delay,
                                                                   self.developer_mode,
-                                                                  self.data_view_mode, self.column_name,
+                                                                  self.data_view_mode, self.column_name[1],
                                                                   self.ghost_mode, self.confirmation_activation))
             core_3 = multiprocessing.Process(target=rainfall_core,args = (humidity_relation[0], humidity_relation[1], humidity_relation[2],humidity_relation[3], self.forecast_horizon,
                                                                   self.tsf_dev_override, self.enhanced_diagnostics_mode,
                                                                   self.stat_analysis_mode, self.delay,
                                                                   self.developer_mode,
-                                                                  self.data_view_mode, self.column_name,
+                                                                  self.data_view_mode, self.column_name[2],
                                                                   self.ghost_mode, self.confirmation_activation))
 
             tri_core_processes = [core_1, core_2, core_3]

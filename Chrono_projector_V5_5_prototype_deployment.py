@@ -397,7 +397,7 @@ elif api_status == "Disabled":
                     purposes = logged_purposes, metrics = logged_metrics, forecast_horizon=logged_forecast_horizon,tsf_dev_override= tsf_dev_mode_override, developer_mode = developer_mode,
                      enhanced_diagnostics_mode = enhanced_diagnostic_mode, ghost_mode=ghost_mode, single_core_deployment_status= 0,
                                         stat_analysis_mode = stat_analysis_mode , delay = delay , data_view_mode=data_view_mode,
-                                        column_name="1",confirmation_activation=confirmation_activation).deploy_multicore_processing()
+                                        column_name=logged_metrics,confirmation_activation=confirmation_activation).deploy_multicore_processing()
             pass
 
     else:
