@@ -1,0 +1,9 @@
+,Description,Analysis results(°C)
+0,Data type for forecast: ,<class 'list'>
+1,Data length for forecast: ,121
+2,Fragment: ,"[22.9, 26.6898, 26.8917, 27.6611, 27.3862, 27.1006, 26.9135, 26.9221, 26.9823, 27.0356]"
+3,Number of unique values for forecast: ,121
+4,Percentage of values that are unique for forecast data: ,100.0%
+5,Negative values: ,0
+6,Positive values: ,121
+7,Zero values: ,0

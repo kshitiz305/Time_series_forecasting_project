@@ -6,10 +6,8 @@ from statsmodels.graphics.tukeyplot import results
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 import datetime
 import scipy.stats as stats
-from pmdarima.arima import auto_arima
 import time
 import statistics
-import matplotlib.pyplot as plt
 
 #supporting functions --------------------------------------------------------------
 
@@ -55,7 +53,9 @@ def error_metric(historic_data, forecasted_data, purpose, metric):
     forecast = np.array(forecasted_data)
 
     if len(observed) != len(forecast):
-        raise ValueError("Lengths of observed and forecast do not match")
+        #adding padding
+        forecast = np.append(forecast,abs(forecast.size - observed.size)*[0])
+        # raise ValueError("Lengths of observed and forecast do not match")
 
     #MAE(Mean absolute error)
     mae_calculations = np.mean(np.abs(observed - forecast))

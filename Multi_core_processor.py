@@ -8,8 +8,9 @@ from statistics import mean
 
 
 class Chrono_projector_deployment:
-    def __init__(self, data_sources, date_sources, purposes, metrics, forecast_horizon, developer_mode,
-                 enhanced_diagnostics_mode, ghost_mode, single_core_deployment_status):
+    def __init__(self, data_sources, date_sources, purposes, metrics, forecast_horizon,tsf_dev_override, enhanced_diagnostics_mode,
+                 stat_analysis_mode,delay , developer_mode,data_view_mode,column_name, ghost_mode
+                    ,confirmation_activation,single_core_deployment_status,):
         assertion_protocols = 1
         if assertion_protocols == 1:
             assert (type(data_sources) == list or type(data_sources) == np.ndarray)
@@ -31,21 +32,38 @@ class Chrono_projector_deployment:
         self.enhanced_diagnostics_mode = enhanced_diagnostics_mode
         self.ghost_mode = ghost_mode
         self.single_core_deployment_status = single_core_deployment_status
+        self.tsf_dev_override = tsf_dev_override
+        self.stat_analysis_mode = stat_analysis_mode
+        self.delay = delay
+        self.column_name = column_name
+        self.confirmation_activation = confirmation_activation
+        self.data_view_mode = data_view_mode
 
 
-    def deploy_multicore_processing(self, data_sources, date_sources, purposes, metrics, forecast_horizon, developer_mode,
-                                    enhanced_diagnostics_mode, ghost_mode, tsf_dev_override):
-        if __name__ == "__main__":
-            temperature_relation = [data_sources[0], date_sources[0], purposes[0], metrics[0]]
-            rainfall_relation = [data_sources[1], date_sources[1], purposes[1], metrics[1]]
-            humidity_relation = [data_sources[2], date_sources[2], purposes[2], metrics[2]]
+    # def deploy_multicore_processing(self, data_sources, date_sources, purposes, metrics, forecast_horizon, developer_mode,
+    #                                 enhanced_diagnostics_mode, ghost_mode, tsf_dev_override):
+    def deploy_multicore_processing(self):
+        # if __name__ == "__main__":
+        if True:
+            temperature_relation = [self.data_sources[0], self.date_sources[0], self.purposes[0], self.metrics[0]]
+            rainfall_relation = [self.data_sources[1], self.date_sources[1], self.purposes[1], self.metrics[1]]
+            humidity_relation = [self.data_sources[2], self.date_sources[2], self.purposes[2], self.metrics[2]]
 
-            core_1 = multiprocessing.Process(target=temperature_core(temperature_relation[0], temperature_relation[1], temperature_relation[2],temperature_relation[3], forecast_horizon,
-                                                                     tsf_dev_override, enhanced_diagnostics_mode, developer_mode, ghost_mode))
-            core_2 = multiprocessing.Process(target=humidity_core(rainfall_relation[0], rainfall_relation[1], rainfall_relation[2],rainfall_relation[3], forecast_horizon,
-                                                                     tsf_dev_override, enhanced_diagnostics_mode, developer_mode, ghost_mode))
-            core_3 = multiprocessing.Process(target=rainfall_core(humidity_relation[0], humidity_relation[1], humidity_relation[2],humidity_relation[3], forecast_horizon,
-                                                                     tsf_dev_override, enhanced_diagnostics_mode, developer_mode, ghost_mode))
+            core_1 = multiprocessing.Process(target=temperature_core,args = (temperature_relation[0], temperature_relation[1], temperature_relation[2],temperature_relation[3], self.forecast_horizon,
+                                                                     self.tsf_dev_override, self.enhanced_diagnostics_mode, self.stat_analysis_mode, self.delay ,self.developer_mode,
+                                                                     self.data_view_mode,self.column_name,self.ghost_mode,self.confirmation_activation))
+            core_2 = multiprocessing.Process(target=humidity_core,args = (rainfall_relation[0], rainfall_relation[1], rainfall_relation[2],rainfall_relation[3], self.forecast_horizon,
+                                                                  self.tsf_dev_override, self.enhanced_diagnostics_mode,
+                                                                  self.stat_analysis_mode, self.delay,
+                                                                  self.developer_mode,
+                                                                  self.data_view_mode, self.column_name,
+                                                                  self.ghost_mode, self.confirmation_activation))
+            core_3 = multiprocessing.Process(target=rainfall_core,args = (humidity_relation[0], humidity_relation[1], humidity_relation[2],humidity_relation[3], self.forecast_horizon,
+                                                                  self.tsf_dev_override, self.enhanced_diagnostics_mode,
+                                                                  self.stat_analysis_mode, self.delay,
+                                                                  self.developer_mode,
+                                                                  self.data_view_mode, self.column_name,
+                                                                  self.ghost_mode, self.confirmation_activation))
 
             tri_core_processes = [core_1, core_2, core_3]
             # Initialization time

@@ -1,0 +1,15 @@
+,Description,Analysis results(°C)
+0,Maximum value,32.41
+1,Minimum value,20.037
+2,Median value,26.625
+3,Mean value,26.084
+4,Standard deviation,2.913
+5,Quantiles,"['23.292 °C', '26.625 °C', '27.877 °C']"
+6,Data variance,8.413
+7,Variance,8.483
+8,Skewness,0.005930394702750755
+9,Kurtosis,-0.5348411940457893
+10,Mode,"ModeResult(mode=20.0374, count=1)"
+11,Range,12.372
+12,Inter-quartile mean,26.296929508196722
+13,Semi-quartile range,2.2280999999999995

@@ -1,0 +1,9 @@
+,Description,Analysis results(mm)
+0,Data type for forecast: ,<class 'list'>
+1,Data length for forecast: ,121
+2,Fragment: ,"[176, 492.4436, 485.5912, 487.3669, 486.9067, 487.026, 486.9951, 487.0031, 487.001, 487.0015]"
+3,Number of unique values for forecast: ,116
+4,Percentage of values that are unique for forecast data: ,95.868%
+5,Negative values: ,10
+6,Positive values: ,111
+7,Zero values: ,0

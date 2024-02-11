@@ -1,0 +1,15 @@
+,Description,Analysis results(mm)
+0,Maximum value,565.158
+1,Minimum value,-120.41
+2,Median value,255.115
+3,Mean value,284.02
+4,Standard deviation,199.076
+5,Quantiles,"['122.001 mm', '255.115 mm', '489.905 mm']"
+6,Data variance,39303.686
+7,Variance,39631.216
+8,Skewness,-0.14030557958180184
+9,Kurtosis,-1.2502218143475818
+10,Mode,"ModeResult(mode=537.467, count=5)"
+11,Range,685.568
+12,Inter-quartile mean,291.66245081967213
+13,Semi-quartile range,166.19735

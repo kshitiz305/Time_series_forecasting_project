@@ -1,0 +1,15 @@
+,Description,Analysis results(%)
+0,Maximum value,77.7
+1,Minimum value,25.0
+2,Median value,60.4
+3,Mean value,58.881
+4,Standard deviation,12.829
+5,Quantiles,"['49.075 %', '60.4 %', '70.85 %']"
+6,Data variance,164.123
+7,Variance,164.596
+8,Skewness,-0.4919670431491886
+9,Kurtosis,-0.8289933072429982
+10,Mode,"ModeResult(mode=74.3, count=6)"
+11,Range,52.7
+12,Inter-quartile mean,60.70919540229884
+13,Semi-quartile range,10.762500000000003

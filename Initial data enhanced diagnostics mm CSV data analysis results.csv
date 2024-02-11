@@ -1,0 +1,9 @@
+,Description,Analysis results(mm)
+0,Data type for initial data: ,<class 'numpy.ndarray'>
+1,Data length for initial data: ,348
+2,Fragment: ,[ 13 147 241 496 421 142 125 106 253 466]
+3,Number of unique values for initial data: ,283
+4,Percentage of values that are unique for initial data data: ,81.322%
+5,Negative values: ,0
+6,Positive values: ,348
+7,Zero values: ,0

@@ -1,0 +1,9 @@
+,Description,Analysis results(°C)
+0,Data type for initial data: ,<class 'numpy.ndarray'>
+1,Data length for initial data: ,348
+2,Fragment: ,[28.5 28.3 28.  27.8 27.2 26.6 24.9 25.4 26.  26.4]
+3,Number of unique values for initial data: ,103
+4,Percentage of values that are unique for initial data data: ,29.598%
+5,Negative values: ,0
+6,Positive values: ,348
+7,Zero values: ,0
